@@ -1,4 +1,4 @@
-import "./App.css";
+// import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignUp from "./Components/SignUp/SignUp";
 import ResetPassword from "./Components/ResetPassword/ResetPassword";
@@ -15,10 +15,12 @@ import NewPassword from "./Components/ResetPassword/Otp/NewPassword";
 import MenuCategory from "./Components/MenuCategory/MenuCategory";
 import Deal from "./Components/Deal/Deal";
 import Order from "./Components/Order/Order";
-import CategoryModal from "./Components/MenuCategory/Modalopen";
 import ProtectedRoute from "./Components/ProtectedRouter/Protected";
 import PaginationArrow from "./Components/MenuCategory/Pagination";
-import ModalProduct from "./Components/MenuCategory/Modalopen";
+import Invoice from "./Components/Invoice/Invoice";
+import SaleReport from "./Components/SaleReport/SaleReport";
+import Wallet from "./Components/Wallet/Wallet";
+import CustomerInfo from "./Components/CustomerInfo/Customer";
 
 function App() {
   return (
@@ -37,9 +39,11 @@ function App() {
             <Route path="/menu" element={<MenuCategory />}></Route>
             <Route path="/deal" element={<Deal />}></Route>
             <Route path="/order" element={<Order />}></Route>
-            <Route path="/modal" element={<CategoryModal />}></Route>
+            <Route path="/invoice" element={<Invoice />}></Route>
+            <Route path="/salereport" element={<SaleReport />}></Route>
+            <Route path="/customerinfo" element={<CustomerInfo />}></Route>
+            <Route path="/wallet" element={<Wallet />}></Route>
             <Route path="/pagination" element={<PaginationArrow />}></Route>
-            <Route path="/modal" element={<ModalProduct />}></Route>
           </Route>
         </Routes>
         <ToastContainer position="top-right" autoClose={3000} />

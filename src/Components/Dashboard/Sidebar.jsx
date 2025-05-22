@@ -16,12 +16,12 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="md:w-52 md:fixed   my-14 bg-[#FFFFFF] h-[80%] ">
+      <div className="md:w-52 md:fixed   my-14 bg-[#FFFFFF] h-[80%]  cursor-pointer ">
         <div className="w-full px-6 py-10 cursor-pointer ">
-          <div className="w-full py-4 flex flex-row gap-2">
-            <RxDashboard className="w-5 h-5" />
+          <div className="w-full py-4 flex flex-row gap-2 cursor-pointer">
+            <RxDashboard className="w-5 h-5 cursor-pointer" />
             <p
-              className=" text-[#353535] font-exo2 "
+              className=" text-[#353535] font-exo font-medium  "
               onClick={() => navigate("/dashboard")}
             >
               Dashboard
@@ -30,7 +30,7 @@ const Sidebar = () => {
           <div className="w-full py-4 flex flex-row gap-2">
             <img src={Book} className="w-5 h-5"></img>
             <p
-              className="font-exo2 text-[#353535] font-medium"
+              className="font-exo font-medium text-[#353535] "
               onClick={() => navigate("/category")}
             >
               Menu
@@ -39,7 +39,7 @@ const Sidebar = () => {
           <div className="w-full py-4 flex flex-row gap-2">
             <img src={imgThree} className="w-5 h-5"></img>
             <p
-              className="font-exo2 text-[#353535] font-medium"
+              className="font-exo font-medium text-[#353535] "
               onClick={() => navigate("/menu")}
             >
               Categories
@@ -48,7 +48,7 @@ const Sidebar = () => {
           <div className="w-full py-4 flex flex-row gap-2">
             <img src={imgFour} className="w-5 h-5"></img>
             <p
-              className="font-exo2 text-[#353535] font-medium"
+              className="font-exo font-medium text-[#353535] "
               onClick={() => navigate("/deal")}
             >
               Deal
@@ -57,7 +57,7 @@ const Sidebar = () => {
           <div className="w-full py-4 flex flex-row gap-2">
             <img src={imgFive} className="w-5 h-5"></img>
             <p
-              className="font-exo2 text-[#353535] font-medium"
+              className="font-exo font-medium text-[#353535] "
               onClick={() => navigate("/order")}
             >
               Order
@@ -65,25 +65,48 @@ const Sidebar = () => {
           </div>
           <div className="w-full py-4 flex flex-row gap-2">
             <img src={imgSix} className="w-5 h-5"></img>
-            <p className="font-exo2 text-[#353535] font-medium">Invoice</p>
+            <p
+              className="font-exo font-medium text-[#353535]"
+              onClick={() => navigate("/invoice")}
+            >
+              Invoice
+            </p>
           </div>
           <div className="w-full py-4 flex flex-row gap-2">
             <img src={imgSeven} className="w-5 h-5"></img>
-            <p className="font-exo2 text-[#353535] font-medium">Wallet</p>
+            <p
+              className=" text-[#353535] font-exo font-medium"
+              onClick={() => navigate("/wallet")}
+            >
+              Wallet
+            </p>
           </div>
           <div className="w-full py-4 flex flex-row gap-2">
             <img src={imgEight} className="w-5 h-5"></img>
-            <p className="font-exo2 text-[#353535] font-medium">
+            <p
+              className=" text-[#353535] font-exo font-medium"
+              onClick={() => navigate("/customerinfo")}
+            >
               Customer Info
             </p>
           </div>
           <div className="w-full py-4 flex flex-row gap-2">
             <img src={imgNine} className="w-5 h-5"></img>
-            <p className="font-exo2 text-[#353535] font-medium">Sale Reports</p>
+            <p
+              className="text-[#353535] font-exo font-medium"
+              onClick={() => navigate("/salereport")}
+            >
+              Sale Reports
+            </p>
           </div>
           <div className="w-full py-4 flex flex-row gap-2">
             <img src={imgTen} className="w-5 h-5"></img>
-            <p className="font-exo2 text-[#353535] font-medium">Reservation</p>
+            <p
+              className="font-exo font-medium text-[#353535]"
+              onClick={() => navigate("/reservation")}
+            >
+              Reservation
+            </p>
           </div>
         </div>
       </div>

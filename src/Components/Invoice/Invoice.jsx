@@ -6,8 +6,12 @@ import { useEffect } from "react";
 import Addsign from "../../assets/Images/addSign.png";
 import "../../index.css";
 import Aos from "aos";
+import img1 from "../../assets/Images/Arrowgreen.png";
+import img2 from "../../assets/Images/lineorg.png";
+import img3 from "../../assets/Images/deletered.png";
 
-const Order = () => {
+const Invoice = () => {
+  const actionIcons = [img1, img3, img2];
   const orderList = [
     {
       Order: "ORD001",
@@ -16,7 +20,6 @@ const Order = () => {
       Location: "Lahore",
       Amount: 2500,
       Status: "Delivered",
-      dot: "....",
     },
     {
       Order: "ORD002",
@@ -25,7 +28,6 @@ const Order = () => {
       Location: "Karachi",
       Amount: 3800,
       Status: "Pending",
-      dot: "....",
     },
     {
       Order: "ORD003",
@@ -34,7 +36,6 @@ const Order = () => {
       Location: "Islamabad",
       Amount: 1450,
       Status: "Shipped",
-      dot: "....",
     },
     {
       Order: "ORD004",
@@ -43,7 +44,6 @@ const Order = () => {
       Location: "Multan",
       Amount: 3200,
       Status: "Cancelled",
-      dot: "....",
     },
     {
       Order: "ORD005",
@@ -52,7 +52,6 @@ const Order = () => {
       Location: "Faisalabad",
       Amount: 2750,
       Status: "Delivered",
-      dot: "....",
     },
     {
       Order: "ORD006",
@@ -61,7 +60,6 @@ const Order = () => {
       Location: "Rawalpindi",
       Amount: 4100,
       Status: "Processing",
-      dot: "....",
     },
     {
       Order: "ORD007",
@@ -70,7 +68,6 @@ const Order = () => {
       Location: "Peshawar",
       Amount: 2300,
       Status: "Pending",
-      dot: "....",
     },
     {
       Order: "ORD008",
@@ -79,7 +76,6 @@ const Order = () => {
       Location: "Quetta",
       Amount: 1950,
       Status: "Delivered",
-      dot: "....",
     },
   ];
 
@@ -103,22 +99,11 @@ const Order = () => {
             data-aos="zoom-in"
             className="md:w-[85%]  h-auto  my-28 md:p-0  mx-5 md:ml-[13%] ml-5 "
           >
-            <div className="md:w-full w-full flex flex-row justify justify-between md:p-8 p-4">
+            <div className="md:w-full w-full flex flex-row md:my-10 my-5 justify justify-between md:p-8 p-4">
               <div className="md:w-full w-full ">
-                <h2 className=" text-3xl font-exo font-semibold ">Orders</h2>
-                <h2 className=" font-exo font-semibold  ">
-                  Here is your menu management{" "}
+                <h2 className=" text-3xl font-exo font-semibold ">
+                  Invoice List
                 </h2>
-              </div>
-              <div className=" w-40 h-12 md:my-3 my-0 bg-orange-600 rounded-full cursor-pointer">
-                <div className="md:m-3 m-0  flex ">
-                  <div className=" w-8 md:my-0 md:m-0 m-2 ">
-                    <img src={Addsign} className="w-10 -my-[1px] "></img>
-                  </div>
-                  <div className="md:w-full  w-full text-center font-exo font-semibold  text-white ">
-                    Order Status
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -131,21 +116,24 @@ const Order = () => {
                         <th className=" w-full ">
                           <div className="w-full h-12  border-b-2 my-12 rounded-md ">
                             <div className="grid grid-cols-7  ">
-                              <th className="">Order</th>
+                              <th className="">Invoice ID</th>
                               <td className="text-black font-exo font-semibold ">
-                                Date
+                                Order Name
                               </td>
                               <th className="text-black font-exo font-semibold ">
-                                Customer Name
+                                Order ID
                               </th>
                               <th className="text-black font-exo font-semibold ">
-                                Location{" "}
+                                Invoice Date{" "}
+                              </th>
+                              <th className="text-black font-exo font-semibold ">
+                                Quatity
                               </th>
                               <th className="text-black font-exo font-semibold ">
                                 Amount
                               </th>
                               <th className="text-black font-exo font-semibold ">
-                                Status
+                                Action
                               </th>
                             </div>
                           </div>
@@ -162,7 +150,16 @@ const Order = () => {
                             <div>{item.Location}</div>
                             <div>{item.Amount}</div>
                             <div>{item.Status}</div>
-                            <div>{item.dot}</div>
+                            <div className="flex justify-center gap-2">
+                              {actionIcons.map((icon, i) => (
+                                <img
+                                  key={i}
+                                  src={icon}
+                                  alt={`icon-${i}`}
+                                  className="w-6 h-6"
+                                />
+                              ))}
+                            </div>
                           </div>
                         </tr>
                       ))}
@@ -178,4 +175,4 @@ const Order = () => {
   );
 };
 
-export default Order;
+export default Invoice;

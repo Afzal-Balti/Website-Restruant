@@ -37,8 +37,10 @@ const Deal = () => {
           >
             <div className="w-full flex flex-row justify justify-between p-8">
               <div>
-                <h2 className=" font-exo2 text-3xl font-bold">Deals </h2>
-                <h2 className=" font-exo2 ">Here is your deals management </h2>
+                <h2 className="font-exo font-semibold text-3xl ">Deals </h2>
+                <h2 className=" font-exo font-semibold ">
+                  Here is your deals management
+                </h2>
               </div>
               <div className=" w-40 h-12 my-3  bg-orange-600 flex flex-row  rounded-full">
                 <button className=" ">
@@ -46,7 +48,7 @@ const Deal = () => {
                     <div className="text-center">
                       <img src={Addsign} className="w-6"></img>
                     </div>
-                    <div className="text-center font-bold text-white py-1">
+                    <div className="text-center font-exo font-semibold  text-white py-1">
                       Add Deals
                     </div>
                   </div>

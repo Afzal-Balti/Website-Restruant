@@ -4,10 +4,13 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        fontReplace: ["Exo 2", " sans - serif"],
+        poppins: ["Poppins", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
+        exo: ['"Exo 2"', "sans-serif"],
+        merriweather: ["Merriweather", "serif"],
+        boldonse: ["Boldonse", "sans-serif"], // Only works if 'Boldonse' is valid and loaded
       },
     },
   },
-
   plugins: [],
 };

@@ -6,7 +6,7 @@ import facebook from "../../assets/Images/Facebook.png";
 import google from "../../assets/Images/Google.png";
 import apple from "../../assets/Images/Apple.png";
 import { Checkbox } from "@mui/material";
-import {useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../ReduxStore/CreateSlice";
 import { toast } from "react-toastify";
@@ -85,21 +85,23 @@ const LoginIn = () => {
               <form onSubmit={handleSubmit(onsubmit)} className="w-full h-auto">
                 <div className="md:w-[40%] w-full  ">
                   <div className="md:w-full w-full ">
-                    <h1 className=" w-full text-end md:px-14 font-medium px-10 font-exo2  text-3xl text-[#3C3C3C]">
+                    <h1 className=" w-full text-end md:px-14 font-exo font-semibold px-10 font-exo2  text-3xl text-[#3C3C3C]">
                       Sign In
                     </h1>
-                    <p className="md:w-full  w-full text-end  md:px-4 -10  font-exo2 text-[#959895] ">
+                    <p className="md:w-full  w-full text-end  md:px-4 -10  font-exo font-medium py-2 text-[#959895] ">
                       Sign in to stay connected.
                     </p>
                   </div>
                 </div>
                 <div className="md:w-full  my-10 gap-6  flex md:flex-col flex-col ">
                   <div className="md:w-[60%] w-full">
-                    <label className="text-[#959895]">Full Name</label>
+                    <label className="  font-exo font-medium  text-[#959895]">
+                      Full Name
+                    </label>
                     <input
                       type="text"
                       placeholder=""
-                      className="w-full border-b border-gray-300 p-3 focus:outline-none focus:ring-0 focus:border-b-2 rounded-3xl"
+                      className="w-full border-b border-gray-300 p-3 my-2 focus:outline-none focus:ring-0 focus:border-b-2 rounded-3xl"
                       {...register("firstName", {
                         required: "First name is required",
                         minLength: {
@@ -116,11 +118,13 @@ const LoginIn = () => {
                     )}
                   </div>
                   <div className="md:w-[60%] w-full">
-                    <label className="text-[#959895] font-exo2">Password</label>
+                    <label className="text-[#959895] font-exo font-medium ">
+                      Password
+                    </label>
                     <input
                       type="password"
                       placeholder=""
-                      className="w-full border-b border-gray-300 p-3 focus:outline-none focus:ring-0 focus:border-b-2 rounded-3xl"
+                      className="w-full border-b border-gray-300 p-3 my-2 focus:outline-none focus:ring-0 focus:border-b-2 rounded-3xl"
                       {...register("password", {
                         required: "Password is required",
                         pattern: {
@@ -145,12 +149,12 @@ const LoginIn = () => {
                   <div className="md:w-[60%] justify justify-between flex md:flex-row flex-col ">
                     <div className="flex flex-row">
                       <Checkbox />
-                      <p className="py-3 font-exo2">Remember me</p>
+                      <p className="py-3 font-exo font-medium ">Remember me</p>
                     </div>
                     <div className="py-3">
                       <span
                         onClick={() => navigate("/resetpassword")}
-                        className="text-[#EA6A12] font-exo2 cursor-pointer  hover:text-orange-500 "
+                        className="text-[#EA6A12] font-exo font-medium  cursor-pointer  hover:text-orange-500 "
                       >
                         Forgot password?
                       </span>
@@ -163,9 +167,13 @@ const LoginIn = () => {
                     type="onsubmit"
                     className=" md:w-40 w-full h-12 items-center bg-[#EA6112] text-white font-exo2 py-3 rounded-3xl "
                   >
-                    {loading ? <Loadering /> : <p>Sign In</p>}
+                    {loading ? (
+                      <Loadering />
+                    ) : (
+                      <p className="font-exo font-semibold ">Sign In</p>
+                    )}
                   </button>
-                  <p className="md:w-full w-full my-4 text-[#959895] ">
+                  <p className="md:w-full w-full my-4 text-[#959895] font-exo font-medium  ">
                     Or sign in with other accounts?
                   </p>
                 </div>
@@ -181,11 +189,11 @@ const LoginIn = () => {
                   </div>
                 </div>
                 <div className="md:w-full sm:w-full ">
-                  <p className="text-center md:w-[60%] w-full  md:font-exo2 font-normal  text-[#959895] ">
+                  <p className="text-center md:w-[60%] w-full font-exo font-medium  text-[#959895] ">
                     Don’t Have an account?
                     <span
                       onClick={() => navigate("/")}
-                      className=" w-full text-[#EA6112] mx-2  font-exo2 cursor-pointer hover:text-orange-500"
+                      className=" w-full text-[#EA6112] mx-2  font-exo font-medium cursor-pointer hover:text-orange-500"
                     >
                       Click here to sign up
                     </span>

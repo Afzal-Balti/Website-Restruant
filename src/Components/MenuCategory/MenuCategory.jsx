@@ -129,19 +129,21 @@ const MenuCategory = () => {
           >
             <div className="md:w-full w-full flex flex-row justify justify-between md:p-8 p-4">
               <div className="md:w-full w-full ">
-                <h2 className=" font-exo2 text-3xl font-bold">
+                <h2 className=" font-exo font-semibold  text-3xl ">
                   Menu Categories
                 </h2>
-                <h2 className=" font-exo2 ">Here is your menu management </h2>
+                <h2 className=" font-exo font-semibold  ">
+                  Here is your menu management
+                </h2>
               </div>
 
               <div type="" onClick={showModal}>
                 <div className=" md:w-56 w-36 md:h-14 h-11 md:my-3 my-0  bg-[#EA6A12] rounded-full cursor-pointer">
                   <div className="md:m-5 m-0   flex flex-row  md:py-3  ">
-                    <div className="md:w-8 w-10 md:my-0 my-3 md:-m-0 m-2 ">
+                    <div className="md:w-8 w-10 md:my-0 my-3 max-md:hidden md:-m-0 m-2 ">
                       <img src={Addsign} className=""></img>
                     </div>
-                    <div className="md:w-full w-36 md:text-center  text-balance md:px-0 px-2 font-bold text-white py-1">
+                    <div className="md:w-full w-36 md:text-center font-exo font-semibold  text-balance md:px-0 px-9  text-white py-1">
                       Add Menu Categories
                     </div>
                   </div>
@@ -244,7 +246,7 @@ const MenuCategory = () => {
 
             <div className=" md:w-[96%] w-[85%] font-bold md:h-80 h-auto md:m-8  md:ml-auto ml-6  rounded-2xl my-20 p-8 flex flex-col justify-between bg-[#FDFDFB]">
               <div>
-                <p>Menu Comparison</p>
+                <p className="font-exo font-semibold ">Menu Comparison</p>
               </div>
               <div className="md:w-full w-full md:my-0 my-8  ">
                 <div className="w-1/2 md:ml-[5%] ml-4 ">

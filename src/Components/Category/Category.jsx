@@ -16,6 +16,8 @@ import { Productdata, ProductDatas } from "../ReduxStore/ProductSlice";
 import { useForm } from "react-hook-form";
 import dummypic from "../../assets/Images/export.png";
 import CategoryPagination from "./CategoryPagination";
+import { useParams } from "react-router";
+import { Modal } from "antd";
 
 const category = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -125,16 +127,18 @@ const category = () => {
           >
             <div className="w-full flex flex-row justify justify-between p-8">
               <div>
-                <h2 className=" font-exo2 text-3xl font-bold">Menu </h2>
-                <h2 className=" font-exo2 ">Here is your menu management </h2>
+                <h2 className=" font-exo font-semibold text-3xl ">Menu </h2>
+                <h2 className=" font-exo font-semibold ">
+                  Here is your menu management{" "}
+                </h2>
               </div>
               <div type="" onClick={showModal}>
                 <div className=" md:w-40 w-36 md:h-14 h-11 md:my-3 my-0  bg-[#EA6A12] rounded-full cursor-pointer">
                   <div className="md:m-5 m-0   flex flex-row  md:py-3  ">
-                    <div className="md:w-8 w-10 md:my-0 my-3 md:-m-0 m-2 ">
+                    <div className="md:w-8 w-10 md:my-0 my-2 max-md:hidden md:-m-0 m-2 ">
                       <img src={Addsign} className=""></img>
                     </div>
-                    <div className="md:w-full w-36 md:text-center  text-balance md:px-0 px-2 font-bold text-white py-1">
+                    <div className="md:w-full w-36 md:text-center md:my-0 my-2  text-balance md:px-0 px-9 font-exo font-semibold text-white py-1">
                       Add Menu
                     </div>
                   </div>
@@ -149,7 +153,10 @@ const category = () => {
                 onCancel={handleCancel}
                 okText="Add Post"
               >
-                <label className="w-full font-bold "> Menu Name </label>
+                <label className="w-full font-exo font-semibold ">
+                  {" "}
+                  Menu Name{" "}
+                </label>
 
                 <input
                   type="text"
@@ -169,7 +176,10 @@ const category = () => {
                 {errors.name && (
                   <p className="text-red-500 text-sm">{errors.name.message}</p>
                 )}
-                <label className="w-full font-bold  "> Description </label>
+                <label className="w-full font-exo font-semibold ">
+                  {" "}
+                  Description{" "}
+                </label>
                 <input
                   type="text"
                   placeholder=" Write the Description "
@@ -272,7 +282,7 @@ const category = () => {
 
             <div className=" md:w-[96%] w-[85%] font-bold md:h-80 h-auto md:m-8  md:ml-auto ml-6  rounded-2xl my-20 p-8 flex flex-col justify-between bg-[#FDFDFB]">
               <div>
-                <p>Menu Comparison</p>
+                <p className="font-exo font-semibold">Menu Comparison</p>
               </div>
               <div className="md:w-full w-full md:my-0 my-8  ">
                 <div className="w-1/2 md:ml-[5%] ml-4 ">

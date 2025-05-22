@@ -94,7 +94,7 @@ const productSlice = createSlice({
         state.categoryItem = action.payload;
       })
       .addCase(CategoryProduct.rejected, (state, action) => {
-        state.loading = true;
+        state.loading = false;
         state.error = action.payload;
       })
       .addCase(Productdata.pending, (state) => {

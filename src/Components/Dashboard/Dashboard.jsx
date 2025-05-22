@@ -150,11 +150,11 @@ const Dashboard = () => {
             data-aos="zoom-in"
             className="md:w-[65%]  my-24 md:p-0 p-5 mx-5 md:ml-[12%] ml-5 "
           >
-            <h2 className="py-5 font-exo2 text-3xl">Dashborad</h2>
+            <h2 className="py-5 font-exo font-semibold text-3xl">Dashborad</h2>
             <div className="data-aos=zoom w-full h-96 bg-[#FDFDFB] rounded-md">
               <div className="w-full mx-3 py-3">
-                <h2 className="font-exo2 text-md">Sale Figures</h2>
-                <h3 className="w-full font-normal ">This year</h3>
+                <h2 className="font-exo font-medium ">Sale Figures</h2>
+                <h3 className="w-full font-exo font-medium ">This year</h3>
               </div>
               <div className=" w-full h-72 ">
                 <ReactChart className="bg-orange-400" />
@@ -167,15 +167,23 @@ const Dashboard = () => {
                 className="md:w-[60%] w-full bg-[#FDFDFB] h-96 rounded-md my-8 "
               >
                 <div className="w-full h-16  flex flex-row justify justify-between px-20 py-7 border-b-2  rounded-md">
-                  <div className="text-[#353535]">Product</div>
-                  <div className="text-[#353535]">Customer</div>
-                  <div className="text-[#353535]">Member</div>
+                  <div className="text-[#353535] font-exo font-medium">
+                    Product
+                  </div>
+                  <div className="text-[#353535] font-exo font-medium">
+                    Customer
+                  </div>
+                  <div className="text-[#353535] font-exo font-medium">
+                    Member
+                  </div>
                 </div>
                 <div className="w-full px-10 py-6">
-                  <p className="font-medium leading-tight text-2xl text-[#353535]">
+                  <p className=" leading-tight font-exo font-medium text-2xl text-[#353535]">
                     Proucts Sale
                   </p>
-                  <p className="text-[#353535] text-sm">500 products</p>
+                  <p className="text-[#353535] font-exo font-medium text-sm">
+                    500 products
+                  </p>
                 </div>
 
                 <BasicBars />
@@ -185,20 +193,24 @@ const Dashboard = () => {
                 <div className="  md:w-full w-full h-48  bg-[#FDFDFB] gap-y-5 rounded-md  flex flex-row justify justify-between py-10">
                   <div className="w-24 h-20  bg-[#EA6A1266] md:mx-8 mx-3 my-4 rounded-lg">
                     <img src={frameOne} className="w-20 mx-2 "></img>
-                    <p className="px-7 py-2">$18378</p>
+                    <p className="px-7 py-2 font-exo font-medium">$18378</p>
                   </div>
                   <div className="md:w-52  w-full md:h-28 h-auto  md:mx-5 mx-0">
-                    <h2 className="text-center">Total Sales</h2>
+                    <h2 className="text-center font-exo font-medium">
+                      Total Sales
+                    </h2>
                     <LineDesign />
                   </div>
                 </div>
                 <div className="w-full h-48 bg-[#FDFDFB] gap-y-5 rounded-md flex flex-row justify justify-between py-10">
                   <div className="w-24 h-20  bg-[#EA6A1266] md:mx-8 mx-3 my-4 rounded-lg">
                     <img src={frameTwo} className="w-20 mx-2 "></img>
-                    <p className="px-7 py-2">$18378</p>
+                    <p className="px-7 py-2 font-exo font-medium">$18378</p>
                   </div>
                   <div className="md:w-52 w-full h-28 md:mx-5 mx-0">
-                    <h2 className="text-center">Total Sales</h2>
+                    <h2 className="text-center font-exo font-medium">
+                      Total Sales
+                    </h2>
                     <LineDesign />
                   </div>
                 </div>
@@ -207,11 +219,11 @@ const Dashboard = () => {
 
             <div className="md:w-full w-full bg-[#FDFDFB] md:h-72 h-auto rounded-md overflow-y-hidden">
               <div className="w-full h-16  flex flex-row justify justify-between px-10 py-4 border-b-2  rounded-md ">
-                <div className="font-medium leading-tight text-2xl text-[#353535]">
+                <div className="leading-tight font-exo font-medium text-2xl text-[#353535]">
                   Specialties Sales
                 </div>
               </div>
-              <div className="md:w-full flex md:flex-row items-center  flex-col  justify justify-between">
+              <div className="md:w-full flex md:flex-row items-center font-exo font-medium  flex-col  justify justify-between">
                 {imageArr.map((item, index) => {
                   return (
                     <>
@@ -235,26 +247,26 @@ const Dashboard = () => {
             </div>
             <div className="w-full h-auto bg-[#FDFDFB] my-5 py-5 rounded-xl">
               <div>
-                <h2 className="font-medium leading-tight text-2xl text-[#353535] px-10 ">
+                <h2 className="font-exo font-medium leading-tight text-2xl text-[#353535] px-10 ">
                   User List
                 </h2>
               </div>
 
               <div className="w-full h-12  flex flex-row max-md:hidden justify justify-between px-10 py-8  border-b-2  rounded-md ">
-                <div className="font-normal leading-tight text-xl text-[#EA6A12]">
+                <div className="font-exo font-medium leading-tight text-xl text-[#EA6A12]">
                   Customer
                 </div>
-                <div className="font-normal leading-tight text-xl text-[#EA6A12]">
+                <div className="font-exo font-medium leading-tight text-xl text-[#EA6A12]">
                   Address
                 </div>
-                <div className="font-normal leading-tight text-xl text-[#EA6A12]">
+                <div className="font-exo font-mediumleading-tight text-xl text-[#EA6A12]">
                   Contact
                 </div>
-                <div className="font-normal leading-tight text-xl text-[#EA6A12] md:px-20 px-0">
+                <div className="font-exo font-medium leading-tight text-xl text-[#EA6A12] md:px-20 px-0">
                   Email
                 </div>
               </div>
-              <div className="w-full mx-10 py-4">
+              <div className="w-full mx-10 py-4 font-exo font-medium ">
                 {infromationUser.map((item, idx) => {
                   return (
                     <>
@@ -287,10 +299,14 @@ const Dashboard = () => {
           >
             <div className="w-full h-60 bg-[#EA6A12]  rounded-xl">
               <div className="px-8 py-7">
-                <p className="text-white font-medium">Total earning</p>
-                <p className="text-white font-semibold text-2xl">$4,586,963</p>
+                <p className="text-white font-exo font-medium">Total earning</p>
+                <p className="text-white font-exo font-medium text-2xl">
+                  $4,586,963
+                </p>
                 <div className="w-full px-16 h-32 bg-[#FFFFFF] py-3 my-3 rounded-xl">
-                  <p className="text-center font-medium">Total Profit</p>
+                  <p className="text-center font-exo font-medium">
+                    Total Profit
+                  </p>
                   <div className="w-full h-20 ">
                     <LineDesign />
                   </div>
@@ -299,11 +315,11 @@ const Dashboard = () => {
             </div>
             <div className="w-full h-auto bg-[#FDFDFB] my-5 rounded-md ">
               <div className="w-full h-16  flex flex-row justify justify-between px-10 py-4 border-b-2  rounded-md ">
-                <div className="font-normal leading-tight text-xl text-[#353535]">
+                <div className="font-exo font-medium leading-tight text-xl text-[#353535]">
                   Last Transaction
                 </div>
               </div>
-              <div className="w-full  ">
+              <div className="w-full font-exo font-medium   ">
                 {foodPost.map((item, idx) => {
                   return (
                     <>
@@ -328,7 +344,7 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="w-full h-72 bg-[#FDFDFB] my-5 rounded-xl">
-              <div className="px-10 py-5 font-medium">
+              <div className="px-10 py-5 font-exo font-medium">
                 <p>Earning Categories </p>
                 <p>Heist Earnings Categories</p>
               </div>
@@ -338,11 +354,11 @@ const Dashboard = () => {
             </div>
             <div className="w-full h-auto bg-[#FDFDFB] my-8 rounded-xl ">
               <div className="w-full h-28  flex flex-row justify justify-between px-10 py-4 border-b-2  rounded-md ">
-                <div className="font-normal py-4 leading-tight text-xl text-[#353535]">
+                <div className="font-exo font-medium py-4 leading-tight text-xl text-[#353535]">
                   Top Menu Items
                 </div>
               </div>
-              <div className="w-full  ">
+              <div className="w-full font-exo font-medium  ">
                 {foodProgress.map((item, idx) => {
                   return (
                     <>
