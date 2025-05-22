@@ -1,6 +1,5 @@
 import React from "react";
 import logoPic from "../../../assets/Images/logo.png";
-// import fruits from "../../assets/Images/Furits.png";
 import { useForm } from "react-hook-form";
 import oneImage from "../../../assets/Images/imageone.png";
 import threeImage from "../../../assets/Images/imagethree.png";
@@ -8,7 +7,6 @@ import sixImage from "../../../assets/Images/imagesix.png";
 import sevenImage from "../../../assets/Images/imageseven.png";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import Loadering from "../../SignUp/Loadering/Loadering";
 import { conformPassword, setEmail } from "../../ReduxStore/CreateSlice";
 import { toast } from "react-toastify";
 

@@ -1,7 +1,4 @@
 import React from "react";
-import Navbar from "./Navbar";
-import imgOne from "../../assets/Images/Vector(9).png";
-import imgTwo from "../../assets/Images/Vector(1).png";
 import imgThree from "../../assets/Images/Vector(8).png";
 import imgFour from "../../assets/Images/deal.png";
 import imgFive from "../../assets/Images/Vector(6).png";
@@ -23,7 +20,6 @@ const Sidebar = () => {
         <div className="w-full px-6 py-10 cursor-pointer ">
           <div className="w-full py-4 flex flex-row gap-2">
             <RxDashboard className="w-5 h-5" />
-            {/* <img src={imgOne} className="w-5 h-5"></img> */}
             <p
               className=" text-[#353535] font-exo2 "
               onClick={() => navigate("/dashboard")}

@@ -17,6 +17,8 @@ import Deal from "./Components/Deal/Deal";
 import Order from "./Components/Order/Order";
 import CategoryModal from "./Components/MenuCategory/Modalopen";
 import ProtectedRoute from "./Components/ProtectedRouter/Protected";
+import PaginationArrow from "./Components/MenuCategory/Pagination";
+import ModalProduct from "./Components/MenuCategory/Modalopen";
 
 function App() {
   return (
@@ -31,11 +33,13 @@ function App() {
 
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<Dashboard />}></Route>
-            <Route path="/category" element={<Category />}></Route>
+            <Route path="/category/:categoryid" element={<Category />} />
             <Route path="/menu" element={<MenuCategory />}></Route>
             <Route path="/deal" element={<Deal />}></Route>
             <Route path="/order" element={<Order />}></Route>
             <Route path="/modal" element={<CategoryModal />}></Route>
+            <Route path="/pagination" element={<PaginationArrow />}></Route>
+            <Route path="/modal" element={<ModalProduct />}></Route>
           </Route>
         </Routes>
         <ToastContainer position="top-right" autoClose={3000} />

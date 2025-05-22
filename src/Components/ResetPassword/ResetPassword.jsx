@@ -1,6 +1,5 @@
 import React from "react";
 import logoPic from "../../assets/Images/logo.png";
-import fruits from "../../assets/Images/Furits.png";
 import { useForm } from "react-hook-form";
 import oneImage from "../../assets/Images/imageone.png";
 import threeImage from "../../assets/Images/imagethree.png";

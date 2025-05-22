@@ -42,11 +42,6 @@ const Changepassword = () => {
 
     const response = await dispatch(forget(payload));
     console.log("responed is forget password", response);
-
-    // if (response) {
-    //   navigate("/newpassword");
-    // }
-
     if (forget.fulfilled.match(response)) {
       toast.success("OTP Send Email");
       setTimeout(() => {

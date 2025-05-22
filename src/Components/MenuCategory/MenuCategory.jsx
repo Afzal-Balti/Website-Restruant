@@ -2,17 +2,23 @@ import React, { useRef, useState } from "react";
 import Navbar from "../Dashboard/Navbar";
 import Sidebar from "../Dashboard/Sidebar";
 import "aos/dist/aos.css";
-import { Button, Modal } from "antd";
+import { Modal } from "antd";
 import { useEffect } from "react";
 import Addsign from "../../assets/Images/addSign.png";
 import "../../index.css";
 import Aos from "aos";
 import ApexChart from "../Dashboard/ReactChart/PieChart";
 import { useDispatch, useSelector } from "react-redux";
-import { categoryList, CategoryProduct } from "../ReduxStore/ProductSlice";
+import {
+  categoryList,
+  CategoryProduct,
+  Productdata,
+} from "../ReduxStore/ProductSlice";
 import { useForm } from "react-hook-form";
 import dummypic from "../../assets/Images/export.png";
 import Loadering from "../SignUp/Loadering/Loadering";
+import PaginationArrow from "./Pagination";
+import { useNavigate, useParams } from "react-router";
 
 const MenuCategory = () => {
   const [imagePreview, setImagePreview] = useState(null);
@@ -25,8 +31,6 @@ const MenuCategory = () => {
     handleSubmit,
     getValues,
     setValue,
-    onsubmit,
-    watch,
     reset,
   } = useForm({
     defaultValues: { firstName: "" },
@@ -35,17 +39,20 @@ const MenuCategory = () => {
   let value = getValues();
   const res = value.firstName;
 
-  // let res = setValue();
-
   console.log("value********", res);
+
+  const navigate = useNavigate();
 
   const InputImageRef = useRef(null);
 
-  const categories = useSelector((state) => state?.products?.categoryItem);
+  const categories = useSelector(
+    (state) => state?.products?.categoryItem?.results
+  );
   console.log("slector of categories product ::::::::::::", categories);
 
   const loading = useSelector((state) => state?.products?.loading);
-  console.log("slector LOADING IS RUN ::::::::::::", loading);
+
+  console.log("LOADING IS RUN IT  ::::::::::::::::::; ", loading);
 
   const dispatch = useDispatch();
 
@@ -60,10 +67,9 @@ const MenuCategory = () => {
     formData.append("image", value.image);
 
     const responseData = await dispatch(categoryList(formData));
+    // console.log("RESPONSE OF CATEGORY LIST ", responseData);
 
-    console.log("Response DATA IS RUN ::::::::::::::::::::: ", responseData);
-
-    const result = await dispatch(CategoryProduct());
+    const result = await dispatch(CategoryProduct(1));
     if (result) {
       setIsModalOpen(false);
       setImagePreview("");
@@ -84,14 +90,21 @@ const MenuCategory = () => {
   const HandleChangeImage = (event) => {
     const inputFile = event.target.files[0];
     setValue("image", inputFile);
-    console.log("inputFile***", inputFile);
+    // console.log("inputFile***", inputFile);
 
-    console.log("input-image --------------- ", inputFile);
+    // console.log("input-image --------------- ", inputFile);
     if (inputFile) {
-      console.log("Selected File:------------------ ", inputFile);
+      // console.log("Selected File:------------------ ", inputFile);
       setImagePreview(URL.createObjectURL(inputFile));
       setFileList([...fileList, inputFile]);
     }
+  };
+
+  const ProductListed = (id) => {
+    return () => {
+      dispatch(Productdata(id));
+      navigate(`/category/${id}`);
+    };
   };
 
   useEffect(() => {
@@ -128,12 +141,13 @@ const MenuCategory = () => {
                     <div className="md:w-8 w-10 md:my-0 my-3 md:-m-0 m-2 ">
                       <img src={Addsign} className=""></img>
                     </div>
-                    <div className="md:w-full w-40 md:text-center  text-balance md:px-0 px-2 font-bold text-white py-1">
+                    <div className="md:w-full w-36 md:text-center  text-balance md:px-0 px-2 font-bold text-white py-1">
                       Add Menu Categories
                     </div>
                   </div>
                 </div>
               </div>
+
               <Modal
                 title="Add Catagories"
                 closable={{ "aria-label": "Custom Close Button" }}
@@ -164,6 +178,7 @@ const MenuCategory = () => {
                     {errors.firstName.message}
                   </p>
                 )}
+
                 <div
                   className="w-[60%] h-72 mb-10 my-10 mx-20 "
                   onClick={handleImages}
@@ -198,10 +213,14 @@ const MenuCategory = () => {
 
             <div
               className=" w-full 
-              flex flex-row flex-wrap  justify-evenly gap-4 rounded-full"
+              flex flex-row flex-wrap  justify-evenly gap-4 rounded-full cursor-pointer"
             >
               {categories?.map((item, idx) => (
-                <div key={idx} className="data-aos=zoom   rounded-2xl">
+                <div
+                  key={idx}
+                  className="data-aos=zoom   rounded-2xl"
+                  onClick={ProductListed(item.id)}
+                >
                   <div className="w-56  h-60  py-14 overflow-y-hidden relative">
                     <img
                       src={item.image}
@@ -218,6 +237,11 @@ const MenuCategory = () => {
                 </div>
               ))}
             </div>
+
+            <div className="w-full justify justify-center ">
+              <PaginationArrow className="w-full" />
+            </div>
+
             <div className=" md:w-[96%] w-[85%] font-bold md:h-80 h-auto md:m-8  md:ml-auto ml-6  rounded-2xl my-20 p-8 flex flex-col justify-between bg-[#FDFDFB]">
               <div>
                 <p>Menu Comparison</p>

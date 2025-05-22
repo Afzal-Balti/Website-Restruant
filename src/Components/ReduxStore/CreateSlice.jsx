@@ -8,7 +8,6 @@ import {
   signup,
   verifyOtp,
 } from "../AuthApi/AuthApi";
-import { Loader } from "rsuite";
 import Cookies from "js-cookie";
 
 const initialState = {

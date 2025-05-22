@@ -1,30 +1,11 @@
 import React from "react";
 import Navbar from "../Dashboard/Navbar";
 import Sidebar from "../Dashboard/Sidebar";
-// import ReactChart from "../Dashboard/ReactChart/ReactChart";
-// import BasicBars from "../Dashboard/ReactChart/BarChart";
-// import frameOne from "../../assets/Images/Frame(2).png";
-// import frameTwo from "../../assets/Images/Frame(3).png";
-// import { LineChart } from "@mui/x-charts";
-// import LineDesign from "../Dashboard/ReactChart/LineChart";
-
-import threeImage from "../../assets/Images/imagethree.png";
-import sixImage from "../../assets/Images/imagesix.png";
-// import userInfo from "../../assets/Images/circlelogo.png";
-// import AreaChart from "../Dashboard/ReactChart/AreaChart";
-// import PorgressBar from "../Dashboard/ReactChart/ProgressBar";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Addsign from "../../assets/Images/addSign.png";
-import oneImage from "../../assets/Images/imageone.png";
-import Eye from "../../assets/Images/view.png";
-import Pencil from "../../assets/Images/pencil.png";
-import Delete from "../../assets/Images/delete.png";
-import AddDuplicate from "../../assets/Images/addduplicate.png";
 import "../../index.css";
 import Aos from "aos";
-// Restruant / src / Components / Dashboard / MenuCategory;
-import ApexChart from "../Dashboard/ReactChart/PieChart";
 
 const Order = () => {
   const orderList = [
@@ -132,33 +113,40 @@ const Order = () => {
             </div>
 
             <div className="md:w-[96%] w-full bg-[#FDFDFB] h-auto mx-8 rounded-md overflow-y-hidden">
-              <div className="w-full h-20 font-bold flex flex-row justify justify-between px-10 py-4 border-b-2  rounded-md ">
-                <div className="w-full flex flex-row justify justify-between">
-                  <p className="py-2">Order</p>
-                  <p>Date</p>
-                  <p>Customer Name</p>
-                  <p>Location</p>
-                  <p>Amount</p>
-                  <p>Status Order</p>
-                </div>
-              </div>
-              <div className=" w-full h-auto px-10  font-bold leading-tight text-xl  text-[#353535]  ">
-                <div className="w-full my-10 ">
-                  {orderList.map((item, idx) => (
-                    <>
-                      <div
-                        key={idx}
-                        className="w-full flex flex-row justify justify-between p="
-                      >
-                        <h2>{item.Order}</h2>
-                        <h2>{item.Date}</h2>
-                        <h2>{item.CustomerName}</h2>
-                        <h2>{item.Location}</h2>
-                        <h2>{item.Amount}</h2>
-                        <h2>{item.Status}</h2>
-                      </div>
-                    </>
-                  ))}
+              <div className=" w-full h-auto leading-tight text-xl   text-[#353535]  ">
+                <div className="w-full ">
+                  <table className="w-full  ">
+                    <thead>
+                      <tr className="w-full ">
+                        <th className=" w-full px-2 ">
+                          <div className="w-full h-12  border-b-2 my-12 rounded-md ">
+                            <div className="grid grid-cols-6  ">
+                              <th className="">Order</th>
+                              <td className="text-black">Date</td>
+                              <th className="text-black">Customer Name</th>
+                              <th className="text-black">Location </th>
+                              <th className="text-black">Amount</th>
+                              <th className="text-black">Status</th>
+                            </div>
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className=" w-full m-24">
+                      {orderList.map((item, index) => (
+                        <tr className="w-full h-14   text-black cursor-pointer">
+                          <div className=" w-full grid grid-cols-6 text-center  ">
+                            <div>{item.Order} </div>
+                            <div>{item.Date}</div>
+                            <div>{item.CustomerName}</div>
+                            <div>{item.Location}</div>
+                            <div>{item.Amount}</div>
+                            <div>{item.Status}</div>
+                          </div>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>

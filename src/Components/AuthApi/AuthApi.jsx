@@ -41,10 +41,28 @@ export function CategoriesAdd(values) {
   });
 }
 
-export function CatagoriesItem() {
-  return api.get("/category/", {
+export function CatagoriesItem(page) {
+  console.log("page in saga______________", page);
+
+  return api.get(`/category/?page=${page}`, {
     headers: {
       "Content-Type": "application/json",
+    },
+  });
+}
+
+export function ProductItems(categoryId, page) {
+  console.log("categoryId**", categoryId);
+
+  return api.get(`/add_products/?category?page=${(categoryId, page)}`);
+}
+
+export function ProductShow(values) {
+  const token = Cookies.get("accessToken");
+  return api.post("/add_products/", values, {
+    headers: {
+      Authorization: token ? `Bearer ${token}` : undefined,
+      "Content-Type": "multipart/form-data",
     },
   });
 }

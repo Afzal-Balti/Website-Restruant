@@ -7,15 +7,10 @@ import apple from "../../assets/Images/Apple.png";
 import { useForm } from "react-hook-form";
 import { data, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { signup } from "../AuthApi/AuthApi";
 import { signupUser } from "../ReduxStore/CreateSlice";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loadering from "./Loadering/Loadering";
-
-// import FacebookIcon from "@mui/icons-material/Facebook";
-// import GoogleIcon from "@mui/icons-material/Google";
-// import AppleIcon from "@mui/icons-material/Apple";
 
 <link
   href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -69,11 +64,7 @@ const SignUp = () => {
       responseData.type
     );
 
-    console.log("signput ::::::::: ", signupUser);
-
-    // if (responseData.data.type == "auth/signup/pending") {
-    //   console.log("type is this ?????????????????????", responseData.type);
-    // }
+    // console.log("signput ::::::::: ", signupUser);
 
     if (responseData.payload === "User already exists. Try logging in.") {
       console.log("hello responseData paylaod ", responseData.payload);
@@ -116,7 +107,6 @@ const SignUp = () => {
                     <input
                       type="text"
                       placeholder=""
-                      // value={values.username}
                       className="w-full border-b border-gray-300 p-3 focus:outline-none focus:ring-0 focus:border-b-2 rounded-3xl"
                       {...register("firstName", {
                         required: "First name is required",
@@ -265,15 +255,12 @@ const SignUp = () => {
                 </div>
                 <div className="md:w-[80%] w-full py-5 flex flex-row justify justify-center md:gap-10 gap-0 cursor-pointer ">
                   <div className="md:w-14 w-10 text-center py-3 rounded-full ">
-                    {/* <FacebookIcon className="text-white text-4xl " /> */}
                     <img src={facebook}></img>
                   </div>
                   <div className="md:w-14 w-10 text-center py-3 rounded-full">
-                    {/* <GoogleIcon className="" /> */}
                     <img src={google}></img>
                   </div>
                   <div className="md:w-14 w-10  text-center py-3 rounded-full">
-                    {/* <AppleIcon /> */}
                     <img src={apple}></img>
                   </div>
                 </div>

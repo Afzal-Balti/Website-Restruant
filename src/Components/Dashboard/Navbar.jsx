@@ -2,10 +2,7 @@ import React from "react";
 import logoImg from "../../assets/Images/circlelogo.png";
 import { FiSearch } from "react-icons/fi";
 import { IoNotificationsSharp } from "react-icons/io5";
-import { CiMenuFries } from "react-icons/ci";
 import { IoIosMenu } from "react-icons/io";
-
-import { IoMdMail } from "react-icons/io";
 
 const Navbar = () => {
   return (

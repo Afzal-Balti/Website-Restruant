@@ -1,5 +1,4 @@
 import axios from "axios";
-// import { getRefreshToken } from "../App";
 const BACKEND_URL = "http://192.168.1.52:8000";
 window["ngrok-skip-browser-warning"] = true;
 const api = axios.create({

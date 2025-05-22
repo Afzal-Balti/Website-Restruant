@@ -2,16 +2,13 @@ import React from "react";
 import logoPic from "../../assets/Images/logo.png";
 import fruits from "../../assets/Images/Furits.png";
 import { useForm } from "react-hook-form";
-// import FacebookIcon from "@mui/icons-material/Facebook";
-// import GoogleIcon from "@mui/icons-material/Google";
-// import AppleIcon from "@mui/icons-material/Apple";
 import facebook from "../../assets/Images/Facebook.png";
 import google from "../../assets/Images/Google.png";
 import apple from "../../assets/Images/Apple.png";
 import { Checkbox } from "@mui/material";
-import { Navigate, useNavigate } from "react-router";
+import {useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { loginUser, signupUser } from "../ReduxStore/CreateSlice";
+import { loginUser } from "../ReduxStore/CreateSlice";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Cookies from "js-cookie";
@@ -47,15 +44,15 @@ const LoginIn = () => {
     };
 
     const responseData = await dispatch(loginUser(payload));
-    console.log("Login data respone is here ::::::::::::::", responseData);
+    // console.log("Login data respone is here ::::::::::::::", responseData);
 
     const accessToken = responseData?.payload?.token?.access;
-    console.log("Access Token is Run ::::::::::::::", accessToken);
+    // console.log("Access Token is Run ::::::::::::::", accessToken);
 
     Cookies.set("token", accessToken, {});
 
     const storedToken = Cookies.get("accessToken");
-    console.log("COOKIES IS STORED IS THIS :::::::::::::; ", storedToken);
+    // console.log("COOKIES IS STORED IS THIS :::::::::::::; ", storedToken);
 
     if (responseData.payload === "User with this username does not exist!") {
       toast.warn("user already exist");
@@ -174,15 +171,12 @@ const LoginIn = () => {
                 </div>
                 <div className="md:w-[60%] w-full py-5 flex flex-row justify justify-center md:gap-10 gap-0 cursor-pointer ">
                   <div className="md:w-14 w-10 text-center py-3 rounded-full ">
-                    {/* <FacebookIcon className="text-white text-4xl " /> */}
                     <img src={facebook}></img>
                   </div>
                   <div className="md:w-14 w-10 text-center py-3 rounded-full">
-                    {/* <GoogleIcon className="" /> */}
                     <img src={google}></img>
                   </div>
                   <div className="md:w-14 w-10  text-center py-3 rounded-full">
-                    {/* <AppleIcon /> */}
                     <img src={apple}></img>
                   </div>
                 </div>
